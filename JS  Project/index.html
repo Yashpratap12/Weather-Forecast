@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Character encoding for the document -->
+    <meta charset="UTF-8" />
+    <!-- Responsive design: setting viewport to scale for different devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title of the web page -->
+    <title>WeatherBug</title>
+    <!-- Link to the external CSS stylesheet for styling -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Link to Font Awesome for using icons -->
+    <!--Fav icon-->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/128/4851/4851776.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Preconnect to Google Fonts for improved loading speed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Link to Roboto font family -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Additional preconnect and font links for optimal performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    
+  </head>
+  <body>
+    <!-- Main heading for the application -->
+    <div class="heading">Weather Forecast</div>
+    <div class="github">
+      <a href=" " target="_blank"
+        >Source Code</a
+      >
+    </div>
+    <div class="main-container">
+      <div class="container">
+        <!-- Weather logo section -->
+        <div class="weather-logo">
+          <i class="fa-solid fa-cloud-bolt" style="color: #ffd43b"></i>
+          <!-- Icon for the weather logo -->
+          <p>Weather</p>
+        </div>
+        <!-- Location input section -->
+        <div class="location">
+          <select id="recent-searches" size="5" style="display: none"></select>
+          <!-- Dropdown for recent searches (hidden by default) -->
+          <input
+            type="text"
+            id="input-location"
+            placeholder="Enter Location, Ex: London, Delhi , Lucknow"
+          />
+          <!-- Input field for location entry -->
+        </div>
+        <!-- Button to get weather based on input -->
+        <div class="get-weather">
+          <button id="submit">Get Weather</button>
+        </div>
+        <p id="or">Or</p>
+        <!-- Separator text -->
+        <!-- Button to use current location for weather -->
+        <div class="current-location">
+          <button id="current-locate">Use Current Location</button>
+        </div>
+        <!-- Bottom logo icons -->
+        <div class="bottom-logo">
+          <i class="fa-solid fa-sun" style="color: #ffd43b"></i>
+          <i class="fa-solid fa-cloud" style="color: #74c0fc"></i>
+          <i class="fa-solid fa-temperature-half" style="color: #f83535"></i>
+          <i class="fa-solid fa-bolt" style="color: #274abd"></i>
+          <i class="fa-solid fa-umbrella" style="color: #365da1"></i>
+          <i class="fa-solid fa-wind" style="color: #63e6be"></i>
+        </div>
+      </div>
+      <!-- Section to display weather data -->
+      <div class="display-section">
+        <div class="city-name">
+          <p id="display-city"></p>
+          <!-- Placeholder for displaying city name -->
+          <img src="" id="icon-img" alt="" />
+          <!-- Placeholder for weather icon -->
+          <p id="temperature"></p>
+          <!-- Placeholder for temperature display -->
+        </div>
+        <div class="country">
+          <p id="display-country"></p>
+          <!-- Placeholder for country display -->
+          <p id="lat"></p>
+          <!-- Placeholder for latitude -->
+        </div>
+        <div class="longitude">
+          <p id="long"></p>
+          <!-- Placeholder for longitude -->
+        </div>
+        <div class="weather-items">
+          <!-- Various weather metrics displayed in span elements -->
+          <span>
+            <p>Condition</p>
+            <i class="fa-solid fa-cloud" style="color: #74c0fc"></i>
+            <p id="display-condition"></p>
+          </span> 
+          
+          <span>
+            <p>Wind</p>
+            <i class="fa-solid fa-wind" style="color: #74c0fc"></i>
+            <p id="display-wind"></p>
+          </span>
+          <span>
+            <p>Humidity</p>
+            <i class="fa-solid fa-droplet" style="color: #dbdfe6"></i>
+            <p id="display-humidity"></p>
+          </span>
+          <span>
+            <p>Pressure</p>
+            <i class="fa-solid fa-gauge-high" style="color: #1cd864"></i>
+            <p id="display-pressure"></p>
+          </span>
+          <span>
+            <p>Heat Index</p>
+            <i class="fa-regular fa-sun" style="color: #ffd43b"></i>
+            <p id="display-heat"></p>
+          </span>
+          
+        </div>
+        <p id="forecast-heading"><u> Upcoming days Forecast </u></p>
+        <!-- Heading for the forecast section -->
+        <div class="forecast">
+          <!-- Placeholders for forecast data -->
+          <span>
+            <p class="forecast-date"></p>
+            <img src="" class="forecast-icon" alt="" />
+            <p class="forecast-temp"></p>
+            <p class="forecast-humidity"></p>
+          </span>
+          <span>
+            <p class="forecast-date"></p>
+            <img src="" class="forecast-icon" alt="" />
+            <p class="forecast-temp"></p>
+            <p class="forecast-humidity"></p>
+          </span>
+          <span>
+            <p class="forecast-date"></p>
+            <img src="" class="forecast-icon" alt="" />
+            <p class="forecast-temp"></p>
+            <p class="forecast-humidity"></p>
+          </span>
+          <span>
+            <p class="forecast-date"></p>
+            <img src="" class="forecast-icon" alt="" />
+            <p class="forecast-temp"></p>
+            <p class="forecast-humidity"></p>
+          </span>
+          <span>
+            <p class="forecast-date"></p>
+            <img src="" class="forecast-icon" alt="" />
+            <p class="forecast-temp"></p>
+            <p class="forecast-humidity"></p>
+          </span>
+        </div>
+      </div>
+    </div>
+    <!-- Link to the external JavaScript file for functionality -->
+    <script src="index.js"></script>
+  </body>
+</html>
